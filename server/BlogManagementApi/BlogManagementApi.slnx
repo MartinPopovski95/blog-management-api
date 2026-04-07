@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="BlogManagementApi.DataAccess/BlogManagementApi.DataAccess.csproj" />
+  <Project Path="BlogManagementApi.Domain/BlogManagementApi.Domain.csproj" />
+  <Project Path="BlogManagementApi.DTOs/BlogManagementApi.DTOs.csproj" />
+  <Project Path="BlogManagementApi.Helpers/BlogManagementApi.Helpers.csproj" />
+  <Project Path="BlogManagementApi.Mappers/BlogManagementApi.Mappers.csproj" />
+  <Project Path="BlogManagementApi.Services/BlogManagementApi.Services.csproj" />
+  <Project Path="BlogManagementApi.Shared/BlogManagementApi.Shared.csproj" />
+  <Project Path="BlogManagementApi/BlogManagementApi.csproj" />
+</Solution>
