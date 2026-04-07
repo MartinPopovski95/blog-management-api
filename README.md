@@ -95,7 +95,8 @@ server/
    dotnet run --project BlogManagementApi
    ```
 
-   The API will start on `https://localhost:5001`. Swagger UI is available at `https://localhost:5001/swagger` in development.
+    The API will start on `https://localhost:7229` (HTTPS) or `http://localhost:5168` (HTTP). Swagger UI is available at
+   `https://localhost:7229/swagger` in development.
 
    An admin account is automatically seeded on first run using the `AdminSeed` config values.
 
