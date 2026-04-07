@@ -4,15 +4,15 @@ A RESTful API for managing a blog platform with post management, user authentica
 
 ## Features
 
-- **JWT Authentication** — Login, refresh tokens, and secure logout
-- **Role-Based Authorization** — Admin and Editor roles with granular permissions
-- **Blog Post Management** — Create, update, soft delete, restore, and search posts
-- **Pagination & Filtering** — All list endpoints support paging, category filtering, and search
-- **Related Posts** — Automatic related post suggestions by category
-- **Audit Logging** — Full change trail with user, action, and timestamp
-- **Media Uploads** — Image/media file upload support
-- **Rate Limiting** — Per-endpoint rate limits to prevent abuse
-- **Swagger UI** — Interactive API documentation in development
+- **JWT Authentication** - Login, refresh tokens, and secure logout
+- **Role-Based Authorization** - Admin and Editor roles with granular permissions
+- **Blog Post Management** - Create, update, soft delete, restore, and search posts
+- **Pagination & Filtering** - All list endpoints support paging, category filtering, and search
+- **Related Posts** - Automatic related post suggestions by category
+- **Audit Logging** - Full change trail with user, action, and timestamp
+- **Media Uploads** - Image/media file upload support
+- **Rate Limiting** - Per-endpoint rate limits to prevent abuse
+- **Swagger UI** - Interactive API documentation in development
 
 ## Tech Stack
 
@@ -30,7 +30,7 @@ A RESTful API for managing a blog platform with post management, user authentica
 ```
 server/
 └── BlogManagementApi/
-    ├── BlogManagementApi/          # Web API — controllers, middleware, startup
+    ├── BlogManagementApi/          # Web API - controllers, middleware, startup
     ├── BlogManagementApi.Domain/   # Entities, enums (Post, User, AuditLog, ...)
     ├── BlogManagementApi.DataAccess/  # EF Core DbContext, repositories, migrations
     ├── BlogManagementApi.Services/    # Business logic services
@@ -101,7 +101,7 @@ server/
 
 ## API Reference
 
-### Auth — `/api/auth`
+### Auth - `/api/auth`
 
 > Rate limit: 5 requests/minute
 
@@ -112,7 +112,7 @@ server/
 | `POST` | `/api/auth/refresh` | Public | Exchange a refresh token for a new access token |
 | `POST` | `/api/auth/logout` | Bearer | Invalidate the current refresh token |
 
-### Posts — `/api/posts`
+### Posts - `/api/posts`
 
 > Rate limit: 60 requests/minute
 
@@ -129,20 +129,20 @@ server/
 
 **Query parameters for `GET /api/posts`:** `page`, `pageSize`, `category`, `search`
 
-### Users — `/api/users`
+### Users - `/api/users`
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
 | `GET` | `/api/users/me` | Bearer | Get the current user's profile |
 | `PUT` | `/api/users/me` | Bearer | Update the current user's profile |
 
-### Media — `/api/media`
+### Media - `/api/media`
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
 | `POST` | `/api/media/upload` | Admin / Editor | Upload a media file |
 
-### Admin Users — `/api/admin/users`
+### Admin Users - `/api/admin/users`
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
@@ -155,13 +155,13 @@ server/
 
 The API uses JWT Bearer tokens with refresh token rotation.
 
-1. **Login** — `POST /api/auth/login` returns an `accessToken` and a `refreshToken`.
-2. **Authorize requests** — Include the access token in the `Authorization` header:
+1. **Login** - `POST /api/auth/login` returns an `accessToken` and a `refreshToken`.
+2. **Authorize requests** - Include the access token in the `Authorization` header:
    ```
    Authorization: Bearer <accessToken>
    ```
-3. **Refresh** — When the access token expires (60 min), call `POST /api/auth/refresh` with the refresh token to get a new pair. Refresh tokens expire after 7 days.
-4. **Logout** — Call `POST /api/auth/logout` to invalidate the refresh token server-side.
+3. **Refresh** - When the access token expires (60 min), call `POST /api/auth/refresh` with the refresh token to get a new pair. Refresh tokens expire after 7 days.
+4. **Logout** - Call `POST /api/auth/logout` to invalidate the refresh token server-side.
 
 ## Roles
 
